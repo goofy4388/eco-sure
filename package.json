@@ -1,5 +1,5 @@
 {
-  "name": "bbi-checklist",
+  "name": "bbi-checklist-pdf",
   "version": "1.0.0",
   "type": "module",
   "main": "server.js",
@@ -7,7 +7,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "nodemailer": "^6.9.15"
+    "express": "^4.19.2"
   }
 }
