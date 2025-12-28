@@ -1,1 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BBI Internal Checklist</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>BBI Internal Checklist</h1>
+      <p class="sub">Check off every item, add photos, then submit.</p>
+    </div>
 
+    <div class="tabs" role="tablist" aria-label="Shift tabs">
+      <button class="tab active" data-shift="am" role="tab" aria-selected="true">AM Shift</button>
+      <button class="tab" data-shift="pm" role="tab" aria-selected="false">PM Shift</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="meta">
+      <div class="field">
+        <label for="store">Store</label>
+        <input id="store" placeholder="e.g., Wilmington - Market St" />
+      </div>
+
+      <div class="field">
+        <label for="date">Date</label>
+        <input id="date" type="date" />
+      </div>
+
+      <div class="field">
+        <label for="time">Time</label>
+        <input id="time" type="time" />
+      </div>
+
+      <div class="field">
+        <label for="manager">Completed By</label>
+        <input id="manager" placeholder="Manager name" />
+      </div>
+    </section>
+
+    <div id="progress" class="progress" aria-live="polite"></div>
+
+    <section id="checklist" class="checklist"></section>
+
+    <section class="submitBox">
+      <div class="field emailField">
+        <label for="sendTo">Email to send to (required before submit)</label>
+        <input id="sendTo" type="email" placeholder="name@email.com" />
+      </div>
+
+      <button id="submitBtn" class="submit" disabled>Submit Completed Checklist</button>
+      <p class="tiny">
+        Tip: On iPhone/Android, “Add Photos” will let you take pictures with the camera.
+      </p>
+
+      <div id="status" class="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
