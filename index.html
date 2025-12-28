@@ -8,9 +8,9 @@
 </head>
 <body>
   <header class="top">
-    <div>
+    <div class="brand">
       <h1>BBI Internal Checklist</h1>
-      <p class="sub">Check off every item, add photos, then submit.</p>
+      <p class="sub">Check everything off, add photos, then submit to download a PDF.</p>
     </div>
 
     <div class="tabs" role="tablist" aria-label="Shift tabs">
@@ -47,20 +47,16 @@
     <section id="checklist" class="checklist"></section>
 
     <section class="submitBox">
-      <div class="field emailField">
-        <label for="sendTo">Email to send to (required before submit)</label>
-        <input id="sendTo" type="email" placeholder="name@email.com" />
-      </div>
-
-      <button id="submitBtn" class="submit" disabled>Submit Completed Checklist</button>
+      <button id="submitBtn" class="submit" disabled>Submit & Download PDF</button>
       <p class="tiny">
-        Tip: On iPhone/Android, “Add Photos” will let you take pictures with the camera.
+        iPhone tip: after tapping submit, it may open the PDF preview → tap Share → Save to Files.
       </p>
-
       <div id="status" class="status" aria-live="polite"></div>
     </section>
   </main>
 
+  <!-- jsPDF -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
