@@ -1,5 +1,5 @@
 {
-  "name": "bbi-checklist-pdf",
+  "name": "bbi-internal-checklist",
   "version": "1.0.0",
   "type": "module",
   "main": "server.js",
