@@ -7,59 +7,68 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="top">
-    <div class="brand">
-      <h1>BBI Internal Checklist</h1>
-      <p class="sub">Check everything off, add photos, then submit to download a PDF.</p>
-    </div>
 
-    <div class="tabs" role="tablist" aria-label="Shift tabs">
-      <button class="tab active" data-shift="am" role="tab" aria-selected="true">AM Shift</button>
-      <button class="tab" data-shift="pm" role="tab" aria-selected="false">PM Shift</button>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="meta">
-      <div class="field">
-        <label for="store">Store</label>
-        <input id="store" placeholder="e.g., Wilmington - Market St" />
-      </div>
-
-      <div class="field">
-        <label for="date">Date</label>
-        <input id="date" type="date" />
-      </div>
-
-      <div class="field">
-        <label for="time">Time</label>
-        <input id="time" type="time" />
-      </div>
-
-      <div class="field">
-        <label for="manager">Completed By</label>
-        <input id="manager" placeholder="Manager name" />
-      </div>
-    </section>
-
-    <div id="progress" class="progress" aria-live="polite"></div>
-
-    <section id="checklist" class="checklist"></section>
-
-   <section class="submitBox">
-  <button id="submitBtn">Submit & Download PDF</button>
-
-  <div class="btnRow">
-    <button id="resetShiftBtn" type="button">Reset Current Shift</button>
-    <button id="resetAllBtn" type="button" class="danger">Reset ALL</button>
+<header class="top">
+  <div>
+    <h1>BBI Internal Checklist</h1>
+    <p class="sub">One checkbox per item + notes + photos. Submit downloads PDF.</p>
   </div>
 
-  <p class="hint">PDF will open → Share → Save to Files (iPhone)</p>
-</section>
-  </main>
+  <div class="tabs">
+    <button class="tab active" data-shift="am" type="button">AM Shift</button>
+    <button class="tab" data-shift="pm" type="button">PM Shift</button>
+  </div>
+</header>
 
-  <!-- jsPDF -->
-  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
-  <script src="app.js"></script>
+<main class="wrap">
+
+  <section class="meta">
+    <div class="field">
+      <label>Store</label>
+      <input id="store" placeholder="Store / Location" />
+    </div>
+    <div class="field">
+      <label>Date</label>
+      <input id="date" type="date" />
+    </div>
+    <div class="field">
+      <label>Time</label>
+      <input id="time" type="time" />
+    </div>
+  </section>
+
+  <section class="meta">
+    <div class="field">
+      <label>AM Manager</label>
+      <input id="amManager" placeholder="AM Manager name" />
+    </div>
+    <div class="field">
+      <label>PM Manager</label>
+      <input id="pmManager" placeholder="PM Manager name" />
+    </div>
+    <div class="field">
+      <label>Completed By (optional)</label>
+      <input id="completedBy" placeholder="Name" />
+    </div>
+  </section>
+
+  <div id="sections"></div>
+
+  <section class="submitBox">
+    <button id="submitBtn" type="button">Submit & Download PDF</button>
+
+    <div class="btnRow">
+      <button id="resetShiftBtn" type="button">Reset Current Shift</button>
+      <button id="resetAllBtn" type="button" class="danger">Reset ALL</button>
+    </div>
+
+    <div id="status" class="status"></div>
+    <p class="hint">iPhone: PDF opens → Share → Save to Files.</p>
+  </section>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
