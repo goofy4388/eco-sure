@@ -46,13 +46,16 @@
 
     <section id="checklist" class="checklist"></section>
 
-    <section class="submitBox">
-      <button id="submitBtn" class="submit" disabled>Submit & Download PDF</button>
-      <p class="tiny">
-        iPhone tip: after tapping submit, it may open the PDF preview → tap Share → Save to Files.
-      </p>
-      <div id="status" class="status" aria-live="polite"></div>
-    </section>
+   <section class="submitBox">
+  <button id="submitBtn">Submit & Download PDF</button>
+
+  <div class="btnRow">
+    <button id="resetShiftBtn" type="button">Reset Current Shift</button>
+    <button id="resetAllBtn" type="button" class="danger">Reset ALL</button>
+  </div>
+
+  <p class="hint">PDF will open → Share → Save to Files (iPhone)</p>
+</section>
   </main>
 
   <!-- jsPDF -->
