@@ -91,3 +91,19 @@ body { margin: 0; background: #0b0c10; color: #eaeaea; }
 .status { margin-top: 10px; font-size: 13px; }
 .status.ok { color: #4bd37b; }
 .status.err { color: #ff6b6b; }
+.btnRow{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+
+.btnRow button{
+  width:auto;
+  flex:1;
+  border:1px solid #444;
+}
+
+.danger{
+  border-color:#ff5b5b !important;
+}
