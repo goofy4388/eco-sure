@@ -11,6 +11,8 @@ const checklistEl = $("#checklist");
 const progressEl = $("#progress");
 const submitBtn = $("#submitBtn");
 const statusEl = $("#status");
+const resetShiftBtn = $("#resetShiftBtn");
+const resetAllBtn = $("#resetAllBtn");
 
 const storeEl = $("#store");
 const dateEl = $("#date");
@@ -627,3 +629,45 @@ submitBtn.addEventListener("click", submit);
   render();
   updateUIState();
 })();
+/* =========================
+   RESET BUTTON LOGIC
+========================= */
+
+function resetCurrentShift(){
+  if (!confirm(`Clear everything for ${shift.toUpperCase()} shift?`)) return;
+
+  CHECKLIST.forEach(sec => {
+    state[shift][sec.title].forEach(r => {
+      r.done = false;
+      r.note = "";
+      r.photo = null;
+    });
+  });
+
+  render();
+}
+
+function resetAll(){
+  if (!confirm("Clear EVERYTHING (AM + PM + header info)?")) return;
+
+  ["am","pm"].forEach(s => {
+    CHECKLIST.forEach(sec => {
+      state[s][sec.title].forEach(r => {
+        r.done = false;
+        r.note = "";
+        r.photo = null;
+      });
+    });
+  });
+
+  $("#manager").value = "";
+  $("#store").value = "";
+
+  const now = new Date();
+  $("#date").value = now.toISOString().slice(0,10);
+  $("#time").value = now.toTimeString().slice(0,5);
+
+  render();
+}
+resetShiftBtn.onclick = resetCurrentShift;
+resetAllBtn.onclick = resetAll;
